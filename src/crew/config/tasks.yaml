@@ -1,0 +1,121 @@
+  collect_github_data:
+    description: |
+      Collect comprehensive GitHub profile data for the specified username: {github_username}
+      
+      Your task includes:
+      1. Extract basic profile information (bio, location, followers, etc.)
+      2. Analyze public repositories and their characteristics
+      3. Identify programming languages and technology stack
+      4. Gather repository statistics (stars, forks, issues, commits)
+      5. Analyze project topics and specialization areas
+      6. Assess account activity and engagement patterns
+      7. Calculate repository complexity and maintenance patterns
+      
+      Focus on gathering accurate, complete data while respecting API rate limits.
+      Ensure all collected data is properly structured for further analysis.
+    expected_output: |
+      A comprehensive JSON dataset containing:
+      - Complete user profile information
+      - Detailed repository analysis (top 10 repositories)
+      - Programming language usage statistics
+      - Activity patterns and engagement metrics
+      - Project complexity indicators
+      - Community involvement metrics
+    context: []
+
+  assess_developer_skills:
+    description: |
+      Analyze the collected GitHub data to assess the developer's technical skills and competencies.
+      
+      Your analysis should include:
+      1. Programming language proficiency assessment
+      2. Technology stack and framework experience
+      3. Code quality indicators (documentation, licensing, project structure)
+      4. Experience level evaluation (junior, mid-level, senior)
+      5. Specialization areas and domain expertise
+      6. Project management and collaboration skills
+      7. Open source contribution patterns
+      8. Learning and adaptation indicators
+      9. Problem-solving approach analysis
+      10. Technical leadership potential
+      
+      Provide evidence-based assessments with specific examples from the GitHub data.
+    expected_output: |
+      A detailed skill assessment report including:
+      - Technical competency matrix with proficiency levels
+      - Experience level classification with supporting evidence
+      - Specialization areas and domain expertise
+      - Strengths and areas for improvement
+      - Code quality and best practices adherence
+      - Collaboration and communication skills assessment
+      - Recommended roles and project types
+    context: 
+      - collect_github_data
+
+  create_technical_profile:
+    description: |
+      Create a comprehensive technical profile that highlights the developer's unique strengths and career trajectory.
+      
+      Your profile should include:
+      1. Executive summary of technical capabilities
+      2. Core technical skills and expertise areas
+      3. Career progression and growth indicators
+      4. Project portfolio highlights
+      5. Community involvement and thought leadership
+      6. Collaboration and mentorship indicators
+      7. Innovation and problem-solving examples
+      8. Technology preferences and adaptability
+      9. Potential fit for different project types
+      10. Professional development recommendations
+      
+      Create a profile that would be valuable for hiring managers, team leads, and project planners.
+    expected_output: |
+      A comprehensive technical profile containing:
+      - Executive summary (2-3 paragraphs)
+      - Technical skills matrix with proficiency ratings
+      - Career highlights and notable projects
+      - Specialization areas and expertise domains
+      - Team collaboration and leadership indicators
+      - Innovation and problem-solving examples
+      - Technology stack preferences
+      - Recommended role types and project fits
+      - Professional development suggestions
+    context: 
+      - collect_github_data
+      - assess_developer_skills
+
+  generate_analysis_report:
+    description: |
+      Generate a comprehensive, well-structured report that presents all GitHub analysis findings in a clear, actionable format.
+      
+      Your report should include:
+      1. Executive summary for quick decision-making
+      2. Developer overview with key metrics
+      3. Technical skills breakdown with evidence
+      4. Repository portfolio analysis
+      5. Activity and engagement patterns
+      6. Strengths and growth areas
+      7. Hiring recommendations (if applicable)
+      8. Project fit analysis
+      9. Risk assessment and considerations
+      10. Next steps and recommendations
+      
+      Ensure the report is suitable for both technical and non-technical stakeholders.
+      Use clear visualizations and metrics where appropriate.
+    expected_output: |
+      A comprehensive analysis report in json format containing:
+      - Executive Summary (key findings and recommendations)
+      - Developer Profile Overview (background and metrics)
+      - Technical Skills Analysis (detailed breakdown)
+      - Repository Portfolio Review (top projects and patterns)
+      - Activity and Engagement Assessment
+      - Strengths and Development Areas
+      - Hiring and Project Fit Recommendations
+      - Risk Analysis and Considerations
+      - Actionable Next Steps
+      - Appendices with raw data summaries
+    context: 
+      - collect_github_data
+      - assess_developer_skills
+      - create_technical_profile
+    output_file: "github_analysis_report_{github_username}.json"
