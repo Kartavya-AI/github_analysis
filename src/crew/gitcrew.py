@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai.project import CrewBase, agent, crew, task
 from src.crew.tools.github import GitHubProfileAnalyzer
-
+from src.crew.tools.pydantic import GitHubDeveloperAnalysisReport
 # Load environment variables
 load_dotenv()
 
@@ -113,7 +113,7 @@ class GitCrew:
         """Analysis Report Generation Task"""
         return Task(
             config=self.tasks_config.get('generate_analysis_report', {}),
-            agent=self.report_generator()
+            agent=self.report_generator(),
         )
     
     @crew

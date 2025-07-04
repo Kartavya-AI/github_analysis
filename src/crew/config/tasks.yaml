@@ -86,34 +86,24 @@
 
   generate_analysis_report:
     description: |
-      Generate a comprehensive, well-structured report that presents all GitHub analysis findings in a clear, actionable format.
+      Generate a comprehensive, well-structured report that presents all GitHub analysis findings in a clear, actionable format use this schema.
       
-      Your report should include:
-      1. Executive summary for quick decision-making
-      2. Developer overview with key metrics
-      3. Technical skills breakdown with evidence
-      4. Repository portfolio analysis
-      5. Activity and engagement patterns
-      6. Strengths and growth areas
-      7. Hiring recommendations (if applicable)
-      8. Project fit analysis
-      9. Risk assessment and considerations
-      10. Next steps and recommendations
+      
       
       Ensure the report is suitable for both technical and non-technical stakeholders.
       Use clear visualizations and metrics where appropriate.
     expected_output: |
-      A comprehensive analysis report in json format containing:
-      - Executive Summary (key findings and recommendations)
-      - Developer Profile Overview (background and metrics)
-      - Technical Skills Analysis (detailed breakdown)
-      - Repository Portfolio Review (top projects and patterns)
-      - Activity and Engagement Assessment
-      - Strengths and Development Areas
-      - Hiring and Project Fit Recommendations
-      - Risk Analysis and Considerations
-      - Actionable Next Steps
-      - Appendices with raw data summaries
+      A comprehensive analysis report in json format containing the following sections:
+      - Executive Summary (key findings and recommendations) type: str[]
+      - Developer Profile Overview (background and metrics) type: dict
+      - Technical Skills Analysis (detailed breakdown) type: dict
+      - Repository Portfolio Review (top projects and patterns) type: dict
+      - Activity and Engagement Assessment type: dict
+      - Strengths and Development Areas type: dict
+      - Hiring and Project Fit Recommendations type: dict
+      - Risk Analysis and Considerations type: dict
+      - Actionable Next Steps type: dict
+      - Appendices with raw data summaries type: dict
     context: 
       - collect_github_data
       - assess_developer_skills
