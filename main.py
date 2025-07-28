@@ -82,7 +82,3 @@ async def analyze_github_profile(request: GitHubAnalysisRequest):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"GitHub analysis failed: {str(e)}")
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
