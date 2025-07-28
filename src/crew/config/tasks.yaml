@@ -94,16 +94,13 @@
       Use clear visualizations and metrics where appropriate.
     expected_output: |
       A comprehensive analysis report in json format containing the following sections:
-      - Executive Summary (key findings and recommendations) type: str[]
-      - Developer Profile Overview (background and metrics) type: dict
-      - Technical Skills Analysis (detailed breakdown) type: dict
-      - Repository Portfolio Review (top projects and patterns) type: dict
-      - Activity and Engagement Assessment type: dict
-      - Strengths and Development Areas type: dict
-      - Hiring and Project Fit Recommendations type: dict
-      - Risk Analysis and Considerations type: dict
-      - Actionable Next Steps type: dict
-      - Appendices with raw data summaries type: dict
+        a json containing:{
+      - Executive summary of findings
+      - Detailed GitHub profile analysis
+      - Developer skill assessment summary
+      - Technical profile overview
+      - Key strengths and areas for improvement
+      } all fields in string format
     context: 
       - collect_github_data
       - assess_developer_skills
