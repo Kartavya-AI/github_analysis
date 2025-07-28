@@ -1,4 +1,5 @@
 # Core CrewAI and AI dependencies
+pysqlite3-binary>=0.4.6
 crewai>=0.28.0
 crewai-tools>=0.1.0
 
@@ -45,3 +46,5 @@ plotly>=5.15.0
 
 # Additional utility libraries
 pathlib2>=2.3.7  # For Python < 3.4 compatibility (if needed)
+Gunicorn>=20.1.0  # For serving the application
+uvicorn>=0.22.0  # For ASGI server support
