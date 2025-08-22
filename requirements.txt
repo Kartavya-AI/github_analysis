@@ -1,6 +1,5 @@
 # Core CrewAI and AI dependencies
 gunicorn>=20.1.0  # For serving the application
-pysqlite3-binary>=0.4.6
 crewai>=0.28.0
 crewai-tools>=0.1.0
 
@@ -27,9 +26,6 @@ seaborn>=0.12.0
 # Optional: Enhanced text processing
 nltk>=3.8.0
 
-# Optional: Database support for caching
-sqlite3
-# Note: sqlite3 is built-in to Python
 
 # Development and testing dependencies
 pytest>=7.0.0
