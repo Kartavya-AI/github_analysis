@@ -1,6 +1,7 @@
 # Core CrewAI and AI dependencies
 gunicorn>=20.1.0  # For serving the application
 crewai>=0.28.0
+crewai[google-genai]
 crewai-tools>=0.1.0
 fastapi
 # GitHub API and HTTP requests
